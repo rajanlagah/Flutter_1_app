@@ -18,12 +18,14 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              title: Text(
-                'Simple',
-              ),
-            ),
-            body: ProductsManager(),),);
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Simple',
+          ),
+        ),
+        body: ProductsManager('startingString-1'),
+      ),
+    );
   }
 }
