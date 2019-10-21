@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './product_manager.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
@@ -22,35 +24,6 @@ class _MyAppState extends State<MyApp> {
                 'Simple',
               ),
             ),
-            body: Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.all(2.0),
-                  child:
-                      RaisedButton(onPressed: () {
-                        setState(() {
-                          _products.add('New');
-                        });
-                      }, child: Text('Press me')),
-                ),
-                Column(
-                    children: _products
-                        .map(
-                          (element) => Card(
-                            child: Column(
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/food.jpg',
-                                  width: 300,
-                                  height: 150,
-                                ),
-                                Text(element)
-                              ],
-                            ),
-                          ),
-                        )
-                        .toList())
-              ],
-            )));
+            body: ProductsManager(),),);
   }
 }
